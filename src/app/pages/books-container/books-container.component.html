@@ -1,0 +1,57 @@
+<!-- books-container.component.html -->
+<div class="container">
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search by title or author"
+      (input)="onSearchQueryChange()"
+    />
+    <!-- Button to toggle add book form -->
+    <button class="add-book-button" (click)="toggleAddBookForm()">Add Book</button>
+  </div>
+
+  <!-- Book List Display -->
+  <div class="book-list">
+    <h2>Books List</h2>
+    <ul id="bookList">
+      <!-- The book list will be dynamically populated using JavaScript -->
+    </ul>
+  </div>
+
+  <!-- Add Book Form -->
+  <div class="add-book-form" id="addBookForm" style="display: none;">
+    <h3>Add New Book</h3>
+    <div class="inputContainer">
+      <!-- Title Input -->
+      <label for="titleInput">Title</label>
+      <input id="titleInput" type="text" placeholder="Title" />
+      <span id="titleError" class="error-message" style="display: none;">Title is required</span>
+
+      <!-- Author Input -->
+      <label for="authorInput">Author</label>
+      <input id="authorInput" type="text" placeholder="Author" />
+      <span id="authorError" class="error-message" style="display: none;">Author is required</span>
+
+      <!-- Genre Input -->
+      <label for="genreInput">Genre</label>
+      <select id="genreInput">
+        <option value=""></option>
+        <option value="Fiction">Fiction</option>
+        <option value="Non-Fiction">Non-Fiction</option>
+        <option value="Mystery">Mystery</option>
+      </select>
+      <span id="genreError" class="error-message" style="display: none;">Genre is required</span>
+
+      <!-- Year Input -->
+      <label for="yearInput">Year</label>
+      <input id="yearInput" type="number" placeholder="Year" />
+      <span id="yearError" class="error-message" style="display: none;">Year is required</span>
+    </div>
+
+    <!-- Action Buttons -->
+    <button (click)="addBook()">Add Book</button>
+    <button (click)="toggleAddBookForm()">Cancel</button>
+  </div>
+</div>
